@@ -2,6 +2,10 @@ package org.example;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.example.deserializers.CaseDeserializer;
+import org.example.deserializers.EmploeeDeserializer;
+import org.example.serializers.CaseSerializers;
+import org.example.serializers.EmploeeSerializer;
 
 import java.util.List;
 
@@ -22,6 +26,10 @@ public class Main {
 
         //todo сериализовывать тут в соответствии со структурой приложенной в файле занятия
         Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Case.class, new CaseSerializers())
+                .registerTypeAdapter(Employee.class, new EmploeeSerializer())
+                .registerTypeAdapter(Case.class, new CaseDeserializer())
+                .registerTypeAdapter(Employee.class, new EmploeeDeserializer())
                 .setPrettyPrinting()
                 .create();
 

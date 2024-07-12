@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class Case {
-    @SerializedName("title")
     private String caseTitle;
     private String description;
-    transient private String addingInfo;
+    private String addingInfo;
 }

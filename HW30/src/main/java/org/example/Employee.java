@@ -11,9 +11,8 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class Employee {
-    @SerializedName("name")
     private String employeeName;
-    transient private int salary;
+    private int salary;
     private String position;
     private List<Case> cases;
 }
